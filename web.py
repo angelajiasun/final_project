@@ -7,7 +7,7 @@ import giphypop
 
 g = giphypop.Giphy()
 
-#functions for results and about page
+#functions for pages
 @app.route('/')
 def index():
 	return render_template('index.html')
@@ -25,6 +25,10 @@ def results():
 @app.route('/about')
 def about():
 	return render_template('about.html')
+
+@app.route('/github')
+def github():
+	return render_template('github.html')
 
 port = int(os.environ.get("PORT", 5000))
 app.run(host="0.0.0.0", port=port)
